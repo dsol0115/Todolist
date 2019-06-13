@@ -44,11 +44,6 @@ public class MainServlet extends HttpServlet {
 			ObjectMapper objectMapper = new ObjectMapper();
 			String json = objectMapper.writeValueAsString(list);
 
-			/*
-			PrintWriter out = response.getWriter();
-			out.println(json);
-			out.close();
-			*/
 			
 			request.setAttribute("result", json);
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/main.jsp");
