@@ -2,7 +2,7 @@ package kr.or.connect.todo.api;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import java.util.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,13 +39,28 @@ public class MainServlet extends HttpServlet {
 
 			TodoDao dao = new TodoDao();
 
-			List<TodoDto> list = dao.getTodos();
+			List<TodoDto> list = dao.getTodos("TODO");
+			List<TodoDto> list2 = dao.getTodos("DOING");
+			List<TodoDto> list3 = dao.getTodos("DONE");
 
 			ObjectMapper objectMapper = new ObjectMapper();
-			String json = objectMapper.writeValueAsString(list);
-
+			String json1 = objectMapper.writeValueAsString(list);
+			String json2 = objectMapper.writeValueAsString(list2);
+			String json3 = objectMapper.writeValueAsString(list3);
 			
-			request.setAttribute("result", json);
+			StringTokenizer toc = new StringTokenizer(json1,"}");
+			int todocount = toc.countTokens()-1;
+			StringTokenizer doingc = new StringTokenizer(json2,"}");
+			int doingcount = doingc.countTokens()-1;
+			StringTokenizer donec = new StringTokenizer(json3,"}");
+			int donecount = donec.countTokens()-1;
+			
+			request.setAttribute("todocount", todocount);
+			request.setAttribute("doingcount", doingcount);
+			request.setAttribute("donecount", donecount);
+			request.setAttribute("TodoResult", json1);
+			request.setAttribute("DoingResult", json2);
+			request.setAttribute("DoneResult", json3);
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/main.jsp");
 	        requestDispatcher.forward(request, response);
 			

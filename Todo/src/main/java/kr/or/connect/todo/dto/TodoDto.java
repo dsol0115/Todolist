@@ -12,7 +12,7 @@ public class TodoDto {
 
 	}
 
-	public TodoDto(Long id, String name, String regdate, int sequence, String title, String type) {
+	public TodoDto(Long id, String title, String name, int sequence, String type,  String regdate) {
 		super();
 		this.id=id;
 		this.name=name;
@@ -72,11 +72,18 @@ public class TodoDto {
 		this.type = type;
 	}
 
+	
 	@Override
 	public String toString() {
-		return "TodoDto [id=" + id + ", name=" + name + ", regdate=" + regdate + ", sequence=" + sequence + ", title="
-				+ title + ", type=" + type + "]";
+		return "To"
+				+ ""
+				+ ""
+				+ ""
+				+ "doDto [id=" + id + ", title=" + title + ", name=" + name + ", sequence=" + sequence + ", type="
+				+ type + ", regdate=" + regdate + "]";
 	}
+
+	
 
 	
 }

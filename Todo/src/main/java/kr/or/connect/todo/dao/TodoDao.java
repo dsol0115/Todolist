@@ -15,7 +15,7 @@ public class TodoDao {
 	private static String dbUser = "connectuser";
 	private static String dbpasswd = "connect123!@#";
 
-	public List<TodoDto> getTodos() {
+	public List<TodoDto> getTodos(String todotype) {
 		List<TodoDto> list = new ArrayList<>();
 
 		try {
@@ -24,9 +24,10 @@ public class TodoDao {
 			e.printStackTrace();
 		}
 
-		String sql = "select id, title, name, sequence, type, regdate from todo order by regdate desc";
+		String sql = "select id, title, name, sequence, type, regdate from todo where type=? order by regdate desc";
 		try (Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-				PreparedStatement ps = conn.prepareStatement(sql)) {
+				PreparedStatement ps = conn.prepareStatement(sql);
+				) {ps.setString(1, todotype);
 
 			try (ResultSet rs = ps.executeQuery()) {
 
