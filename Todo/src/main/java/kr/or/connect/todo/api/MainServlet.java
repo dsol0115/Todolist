@@ -32,6 +32,7 @@ public class MainServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 			response.setCharacterEncoding("utf-8");
@@ -55,10 +56,41 @@ public class MainServlet extends HttpServlet {
 			StringTokenizer donec = new StringTokenizer(json3,"}");
 			int donecount = donec.countTokens()-1;
 			
+				String[] fe = json1.split("}");
+				String[][]TodoResult;
+				TodoResult= new String[fe.length][6];
+				
+					for(int i=0; i<fe.length; i++) {
+						fe[i]=fe[i].replace("\"","");
+						fe[i]=fe[i].replace("[","");
+						fe[i]=fe[i].replace("]","");
+						fe[i]=fe[i].replace("{","");
+						fe[i]=fe[i].replace("}","");
+						fe[i]=fe[i].replace("[","");
+						fe[i]=fe[i].replace("id","");
+						fe[i]=fe[i].replace(":","");
+						fe[i]=fe[i].replace("name","");
+						fe[i]=fe[i].replace("regdate","");
+						fe[i]=fe[i].replace("sequence","");
+						fe[i]=fe[i].replace("title","");
+						fe[i]=fe[i].replace("type","");
+						
+						 String TodoR[]= fe[i].split(",");
+						 for(int j=0; j<TodoR.length; j++) {
+							
+							 TodoResult[i][j]=TodoR[j];
+							 
+						 }
+					}
+					
+					
+				
+				
+			
 			request.setAttribute("todocount", todocount);
 			request.setAttribute("doingcount", doingcount);
 			request.setAttribute("donecount", donecount);
-			request.setAttribute("TodoResult", json1);
+			request.setAttribute("TodoResult", TodoResult);
 			request.setAttribute("DoingResult", json2);
 			request.setAttribute("DoneResult", json3);
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/main.jsp");

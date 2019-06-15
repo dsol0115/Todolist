@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
  <%
-	String TodoResult = (String)request.getAttribute("TodoResult");
+	String TodoResult[][] = (String[][])request.getAttribute("TodoResult");
 	int todocount=(int)request.getAttribute("todocount");
 	String DoingResult = (String)request.getAttribute("DoingResult");
 	int doingcount=(int)request.getAttribute("doingcount");
@@ -28,10 +28,16 @@
 	<div class="title">TODO</div>
 		<div class="titlelist">
 			<%
-				for(int i=1; i<=todocount; i++){
+				for(int i=0; i<todocount; i++){
 			%>
 			<div class="todo<%=i %>"> 
-				<%=TodoResult %>
+				<%for(int j=0; j<6;j++) {
+				%>	
+				<%=TodoResult[i][j] %>
+				<br>
+				<% 
+					}
+				%>
 			</div>
 			<%
 			}
