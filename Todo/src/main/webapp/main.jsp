@@ -14,14 +14,14 @@
 <html>
 <head>
 <meta charset="EUC-KR">
+<link href="main.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="./main.js"></script>
-
 <title>Insert title here</title>
 </head>
 <body>
-
+<!-- ----망할 아래 a태그 안됨 -->
 <h1>나의 해야할 일들 </h1>
-<div class="addnewbtn">새로운 TODO 등록</div>
+<div class="addnewbtn"><a href="~/Todo/src/main/java/kr/or/connect/todo/api/TodoFormServlet.java">새로운 TODO 등록</a></div>
 <div class="wrapper">
 
 <div class="todo">

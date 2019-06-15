@@ -1,0 +1,16 @@
+@charset "EUC-KR";
+h1{
+	position: absolute;
+    top: 40px;
+    transform: rotate(-30deg);
+    color: steelblue;
+}
+.addnewbtn {
+    position: absolute;
+    right: 20px;
+    font-weight: 600;
+    color: white;
+    background: steelblue;
+    padding: 15px 40px;
+}
+
