@@ -56,6 +56,7 @@ public class MainServlet extends HttpServlet {
 			StringTokenizer donec = new StringTokenizer(json3,"}");
 			int donecount = donec.countTokens()-1;
 			
+			//TodoResult String array creating...
 				String[] fe = json1.split("}");
 				String[][]TodoResult;
 				TodoResult= new String[fe.length][6];
@@ -82,17 +83,69 @@ public class MainServlet extends HttpServlet {
 							 
 						 }
 					}
+			//DoingResult String Array creating...
+					String[] fe2 = json2.split("}");
+					String[][]DoingResult;
+					DoingResult= new String[fe2.length][6];
 					
+						for(int i=0; i<fe2.length; i++) {
+							fe2[i]=fe2[i].replace("\"","");
+							fe2[i]=fe2[i].replace("[","");
+							fe2[i]=fe2[i].replace("]","");
+							fe2[i]=fe2[i].replace("{","");
+							fe2[i]=fe2[i].replace("}","");
+							fe2[i]=fe2[i].replace("[","");
+							fe2[i]=fe2[i].replace("id","");
+							fe2[i]=fe2[i].replace(":","");
+							fe2[i]=fe2[i].replace("name","");
+							fe2[i]=fe2[i].replace("regdate","");
+							fe2[i]=fe2[i].replace("sequence","");
+							fe2[i]=fe2[i].replace("title","");
+							fe2[i]=fe2[i].replace("type","");
+							
+							 String TodoR[]= fe2[i].split(",");
+							 for(int j=0; j<TodoR.length; j++) {
+								
+								 DoingResult[i][j]=TodoR[j];
+								 
+							 }
+						}
 					
-				
+				//DoneResult String array creating...
+						String[] fe3 = json3.split("}");
+						String[][]DoneResult;
+						DoneResult= new String[fe3.length][6];
+						
+							for(int i=0; i<fe3.length; i++) {
+								fe3[i]=fe3[i].replace("\"","");
+								fe3[i]=fe3[i].replace("[","");
+								fe3[i]=fe3[i].replace("]","");
+								fe3[i]=fe3[i].replace("{","");
+								fe3[i]=fe3[i].replace("}","");
+								fe3[i]=fe3[i].replace("[","");
+								fe3[i]=fe3[i].replace("id","");
+								fe3[i]=fe3[i].replace(":","");
+								fe3[i]=fe3[i].replace("name","");
+								fe3[i]=fe3[i].replace("regdate","");
+								fe3[i]=fe3[i].replace("sequence","");
+								fe3[i]=fe3[i].replace("title","");
+								fe3[i]=fe3[i].replace("type","");
+								
+								 String TodoR[]= fe3[i].split(",");
+								 for(int j=0; j<TodoR.length; j++) {
+									
+									 DoneResult[i][j]=TodoR[j];
+									 
+								 }
+							}
 				
 			
 			request.setAttribute("todocount", todocount);
 			request.setAttribute("doingcount", doingcount);
 			request.setAttribute("donecount", donecount);
 			request.setAttribute("TodoResult", TodoResult);
-			request.setAttribute("DoingResult", json2);
-			request.setAttribute("DoneResult", json3);
+			request.setAttribute("DoingResult", DoingResult);
+			request.setAttribute("DoneResult", DoneResult);
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/main.jsp");
 	        requestDispatcher.forward(request, response);
 			

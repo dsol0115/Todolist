@@ -3,9 +3,9 @@
  <%
 	String TodoResult[][] = (String[][])request.getAttribute("TodoResult");
 	int todocount=(int)request.getAttribute("todocount");
-	String DoingResult = (String)request.getAttribute("DoingResult");
+	String DoingResult[][] = (String[][])request.getAttribute("DoingResult");
 	int doingcount=(int)request.getAttribute("doingcount");
-	String DoneResult = (String)request.getAttribute("DoneResult");
+	String DoneResult[][] = (String[][])request.getAttribute("DoneResult");
 	int donecount=(int)request.getAttribute("donecount");
 	
 	
@@ -46,11 +46,43 @@
 </div>
 <div class="doing">
 	<div class="title">DOING</div>
-	<%=DoingResult %>
+	<div class="titlelist">
+			<%
+				for(int i=0; i<doingcount; i++){
+			%>
+			<div class="doing<%=i %>"> 
+				<%for(int j=0; j<6;j++) {
+				%>	
+				<%=DoingResult[i][j] %>
+				<br>
+				<% 
+					}
+				%>
+			</div>
+			<%
+			}
+			%>
+		</div>
 </div>
 <div class="done">
 	<div class="title">DONE</div>
-	<%=DoneResult %>
+	<div class="titlelist">
+			<%
+				for(int i=0; i<donecount; i++){
+			%>
+			<div class="done<%=i %>"> 
+				<%for(int j=0; j<6;j++) {
+				%>	
+				<%=DoneResult[i][j] %>
+				<br>
+				<% 
+					}
+				%>
+			</div>
+			<%
+			}
+			%>
+		</div>
 </div>
 
 </div>
