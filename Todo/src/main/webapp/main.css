@@ -9,8 +9,37 @@ h1{
     position: absolute;
     right: 20px;
     font-weight: 600;
+    top:50px;
     color: white;
     background: steelblue;
     padding: 15px 40px;
 }
+.addnewbtn>a {
+    text-decoration: none;
+    color: white;
+}
+.wrapper {
+    position: absolute;
+    right: 20px;
+    top: 150px;
+    display: grid;
+    width: 1350px;
+    grid-gap: 30px;
+    height: 580px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.title {
+    padding: 20px;
+    background: #044F67;
+    color: white;
+    text-align: left;
+    font-weight: 800;
+    font-size: x-large;
+    margin-bottom: 10px;
+}
 
+
+.titlelist {
+    background: lightblue;
+    display: block;
+}
