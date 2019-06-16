@@ -19,9 +19,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- ----망할 아래 a태그 안됨 -->
+
 <h1>나의 해야할 일들 </h1>
-<div class="addnewbtn"><a href="~/Todo/src/main/java/kr/or/connect/todo/api/TodoFormServlet.java">새로운 TODO 등록</a></div>
+<% String path = request.getContextPath(); %>
+<div class="addnewbtn"><a href="<%=path%>/todoform">새로운 TODO 등록</a></div>
 <div class="wrapper">
 
 <div class="todo">
