@@ -15,7 +15,6 @@
 <head>
 <meta charset="EUC-KR">
 <link href="main.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="./main.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
