@@ -48,10 +48,11 @@ h1{
 .cblock {
     background: aliceblue;
 }
-.blwrap {
+.blwrappper {
     height: 100px;
 }
-bltitle {
+
+.bltitle {
     font-family: auto;
     padding: 15px;
     font-weight: 800;
@@ -62,4 +63,13 @@ bltitle {
     padding: 0px 15px;
     font-weight: 345;
     color: darkslategray;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    left: 80px;
+    background: white;
+    padding: 1px 6px 3px 6px;
+    border-style: solid;
+    border-color: darkgray;
 }

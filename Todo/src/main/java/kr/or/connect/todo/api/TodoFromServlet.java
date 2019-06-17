@@ -3,6 +3,7 @@ package kr.or.connect.todo.api;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,15 +27,8 @@ public class TodoFromServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		out.println("<h1> Hello World </h1>");
-		for(int i=1; i<=10; i++) {
-			out.print(i + "<br>");
-		}
-		
-		out.close();
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/todoForm.jsp");
+		requestDispatcher.forward(request, response);
 	}
 
 }
