@@ -24,7 +24,7 @@ h1{
     top: 150px;
     display: grid;
     width: 1350px;
-    grid-gap: 30px;
+    grid-gap: 20px;
     height: 580px;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -35,11 +35,31 @@ h1{
     text-align: left;
     font-weight: 800;
     font-size: x-large;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 
 .titlelist {
-    background: lightblue;
-    display: block;
+    display: grid;
+    grid-auto-rows: 100px;
+    grid-row-gap: 20px;
+}
+
+.cblock {
+    background: aliceblue;
+}
+.blwrap {
+    height: 100px;
+}
+bltitle {
+    font-family: auto;
+    padding: 15px;
+    font-weight: 800;
+    color: darkslategray;
+    font-size: 23px;
+}
+.blcontent {
+    padding: 0px 15px;
+    font-weight: 345;
+    color: darkslategray;
 }

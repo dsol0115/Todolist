@@ -31,39 +31,49 @@
 			<%
 				for(int i=0; i<todocount; i++){
 			%>
-			<div class="todo<%=i %>"> 
-				<%for(int j=0; j<6;j++) {
-				%>	
-				<%=TodoResult[i][j] %>
-				<br>
-				<% 
-					}
-				%>
+			<div class="cblock"> 
+			
+				<div class="blwrapper">
+					<div class="bltitle">
+					<%= TodoResult[i][4] %> 
+					</div>
+					<div class="blcontent">
+					등록날짜: <% String tdate=TodoResult[i][2].substring(0, 10); 
+					%> <%=tdate %>, <%=TodoResult[i][1]%>, 우선순위<%=TodoResult[i][3]%>
+					</div>
+				</div>	
 			</div>
 			<%
 			}
 			%>
+			
+			
 		</div>
 </div>
 <div class="doing">
 	<div class="title">DOING</div>
 	<div class="titlelist">
+	
 			<%
 				for(int i=0; i<doingcount; i++){
 			%>
-			<div class="doing<%=i %>"> 
-				<%for(int j=0; j<6;j++) {
-				%>	
-				<%=DoingResult[i][j] %>
-				<br>
-				<% 
-					}
-				%>
+			<div class="cblock"> 
+			
+				<div class="blwrapper">
+					<div class="bltitle">
+					<%= TodoResult[i][4] %> 
+					</div>
+					<div class="blcontent">
+					등록날짜: <% String tdate=TodoResult[i][2].substring(0, 10); 
+					%> <%=tdate %>, <%=TodoResult[i][1]%>, 우선순위<%=TodoResult[i][3]%>
+					</div>
+				</div>	
 			</div>
 			<%
 			}
 			%>
 		</div>
+
 </div>
 <div class="done">
 	<div class="title">DONE</div>

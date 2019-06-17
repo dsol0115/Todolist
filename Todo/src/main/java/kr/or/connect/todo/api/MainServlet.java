@@ -56,8 +56,9 @@ public class MainServlet extends HttpServlet {
 			StringTokenizer donec = new StringTokenizer(json3,"}");
 			int donecount = donec.countTokens()-1;
 			
+			
 			//TodoResult String array creating...
-				String[] fe = json1.split("}");
+				String[] fe = json1.split("},");
 				String[][]TodoResult;
 				TodoResult= new String[fe.length][6];
 				
@@ -84,7 +85,7 @@ public class MainServlet extends HttpServlet {
 						 }
 					}
 			//DoingResult String Array creating...
-					String[] fe2 = json2.split("}");
+					String[] fe2 = json2.split("},");
 					String[][]DoingResult;
 					DoingResult= new String[fe2.length][6];
 					
@@ -112,7 +113,7 @@ public class MainServlet extends HttpServlet {
 						}
 					
 				//DoneResult String array creating...
-						String[] fe3 = json3.split("}");
+						String[] fe3 = json3.split("},");
 						String[][]DoneResult;
 						DoneResult= new String[fe3.length][6];
 						
