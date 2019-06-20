@@ -3,11 +3,15 @@ package kr.or.connect.todo.api;
 //uri:todoadd
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import kr.or.connect.todo.dao.TodoDao;
+import kr.or.connect.todo.dto.TodoDto;
 
 /**
  * Servlet implementation class TodoAddServlet
@@ -30,15 +34,16 @@ public class TodoAddServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
-		PrintWriter out = response.getWriter();
 		
-		String t = (String)request.getParameter("gettitle");
-		String n = (String)request.getParameter("getname");
-
-		out.println("<html><head></head><body>");
-		out.println("<h1>result</h1>");
-		out.println("<p>you typed: " + t + n + ".</p>");
-		out.println("</body></html>");
+		String t = (String)request.getParameter("title");
+		String n = (String)request.getParameter("name");
+		int sequence = Integer.parseInt(request.getParameter("sequence"));
+		
+		TodoDao dao = new TodoDao();
+		TodoDto todo = new TodoDto();
+		dao.addTodo(todo);
+		
+		
 
 	}
 
