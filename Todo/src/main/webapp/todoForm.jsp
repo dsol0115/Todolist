@@ -11,6 +11,7 @@
 <body>
 <% String path = request.getContextPath(); %>
 <h1>할일 등록</h1>
+<form id="frm" method="post" action="<%=path%>/todoadd" onsubmit="return submitcheck();">
 <div class="titlep">
 	<h3>어떤 일인가요?</h3>
 	<INPUT TYPE="text" id="gettitle" NAME="title" SIZE="50" maxlength=24 value="swift 공부하기(24자까지)">
@@ -21,16 +22,20 @@
 </div>
 <div class="sequencep">
 	<h3>우선순위를 선택하세요</h3>
-	<input type="radio" id="gets1" name="sequence" >
+	
+	<input type="radio" id="gets" name="sequence" value=1>
 	1순위
-	<input type="radio" id="gets2" name="sequence" >
+	<input type="radio" id="gets" name="sequence" value=2>
 	2순위
-	<input type="radio" id="gets3" name="sequence" >
+	<input type="radio" id="gets" name="sequence" value=3>
 	3순위
 </div>
+
 <div class="prevbtn"> <a href="<%=path%>/todo">< 이전 </a></div>
-<div class="submit">제출</a></div>
-<div class="erase">내용지우기</div>
-</body>
+<input type="submit" id="submit" value="submit">
+<div id="erase">내용지우기</div>
+</form>
 <script type="text/javascript" src="./todoform.js"></script>
+</body>
+
 </html>

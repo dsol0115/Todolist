@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>kr.or.connect.todo.api.TodoFromServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>TodoAddServlet</servlet-name>
+  	<display-name>TodoAddServlet</display-name>
+  	<description></description>
+  	<servlet-class>kr.or.connect.todo.api.TodoAddServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>MainServlet</servlet-name>
@@ -24,6 +30,10 @@
   <servlet-mapping>
   	<servlet-name>TodoFromServlet</servlet-name>
   	<url-pattern>/todoform</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TodoAddServlet</servlet-name>
+  	<url-pattern>/todoadd</url-pattern>
   </servlet-mapping>
   
 </web-app>
