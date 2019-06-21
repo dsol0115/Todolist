@@ -52,7 +52,7 @@ public class TodoDao {
 		return list;
 	}
 
-	public int addTodo(TodoDto todo) {
+	public int addTodo(String title, String name, int sequence) {
 		
 		int insertCount = 0;
 
@@ -66,9 +66,9 @@ public class TodoDao {
 				PreparedStatement ps = conn.prepareStatement(sql)) {
 
 			
-			ps.setString(1, todo.getTitle());
-			ps.setString(2, todo.getName());
-			ps.setInt(3, todo.getSequence());
+			ps.setString(1, title);
+			ps.setString(2, name);
+			ps.setInt(3, sequence);
 
 			insertCount = ps.executeUpdate();
 

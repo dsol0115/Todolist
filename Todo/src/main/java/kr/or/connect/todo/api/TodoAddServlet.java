@@ -37,12 +37,13 @@ public class TodoAddServlet extends HttpServlet {
 		
 		String t = (String)request.getParameter("title");
 		String n = (String)request.getParameter("name");
-		int sequence = Integer.parseInt(request.getParameter("sequence"));
+		int s = Integer.parseInt(request.getParameter("sequence"));
 		
 		TodoDao dao = new TodoDao();
-		TodoDto todo = new TodoDto();
-		dao.addTodo(todo);
+		int insertcount = dao.addTodo(t,n,s);
 		
+		String path = request.getContextPath();
+        response.sendRedirect(path + "/todo");
 		
 
 	}
