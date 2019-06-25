@@ -64,7 +64,7 @@ h1{
     font-weight: 345;
     color: darkslategray;
 }
-.btn {
+#btn {
     position: relative;
     display: inline-block;
     left: 80px;

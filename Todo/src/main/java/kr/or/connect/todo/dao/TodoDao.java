@@ -79,7 +79,7 @@ public class TodoDao {
 		
 	}
 	
-	public int updateTodo(TodoDto todo) {
+	public int updateTodo(String type, Long id) {
 		int updateCount = 0;
 		
 		Connection conn = null;
@@ -93,8 +93,8 @@ public class TodoDao {
 			String sql = "update todo set type = ? where id = ?";
 			ps = conn.prepareStatement(sql);
 			
-			ps.setString(1, todo.getType());
-			ps.setLong(2,  todo.getId());
+			ps.setString(1, type);
+			ps.setLong(2,  id);
 			
 			updateCount = ps.executeUpdate();
 
