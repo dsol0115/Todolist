@@ -1,2 +1,4 @@
 # Todolist
-boostcourse_web
+boostcourse_web project <br>
+First webapp project with db. <br>
+: It shows a list of things to do in the main page and can add more thing in the list. 
